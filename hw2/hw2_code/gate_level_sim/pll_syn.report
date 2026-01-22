@@ -1,0 +1,169 @@
+ 
+****************************************
+Report : area
+Design : pll
+Version: R-2020.09-SP5
+Date   : Thu Nov 27 16:32:55 2025
+****************************************
+
+Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	u_dco/U1/B u_dco/U1/Y u_dco/bc1/U0/A u_dco/bc1/U0/Y u_dco/bc1/U1/A u_dco/bc1/U1/Y u_dco/bc2/U0/A u_dco/bc2/U0/Y u_dco/bc2/U1/A u_dco/bc2/U1/Y u_dco/bc3/U0/A u_dco/bc3/U0/Y u_dco/bc3/U1/A u_dco/bc3/U1/Y u_dco/bc4/U0/A u_dco/bc4/U0/Y u_dco/bc4/U1/A u_dco/bc4/U1/Y u_dco/bc5/U0/A u_dco/bc5/U0/Y u_dco/bc5/U1/A u_dco/bc5/U1/Y u_dco/bc6/U0/A u_dco/bc6/U0/Y u_dco/bc6/U1/A u_dco/bc6/U1/Y u_dco/bc7/U0/A u_dco/bc7/U0/Y u_dco/bc7/U1/A u_dco/bc7/U1/Y u_dco/bc8/U0/A u_dco/bc8/U0/Y u_dco/bc8/U1/A u_dco/bc8/U1/Y u_dco/buf_8/A u_dco/buf_8/Y u_dco/buf_8_2/A u_dco/buf_8_2/Y u_dco/buf_7_2/A u_dco/buf_7_2/Y u_dco/buf_6_2/A u_dco/buf_6_2/Y u_dco/buf_5_2/A u_dco/buf_5_2/Y u_dco/buf_4_2/A u_dco/buf_4_2/Y u_dco/buf_3_2/A u_dco/buf_3_2/Y u_dco/buf_2_2/A u_dco/buf_2_2/Y 
+Information: Timing loop detected. (OPT-150)
+	u_dco/buf_1/A u_dco/buf_1/Y u_dco/U1/B u_dco/U1/Y u_dco/bc1/U0/A u_dco/bc1/U0/Y u_dco/bc1/U1/A u_dco/bc1/U1/Y 
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'u_dco/U1'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0' and 'Y' on cell 'U4'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'Y' on cell 'U3'
+         to break a timing loop. (OPT-314)
+Library(s) Used:
+
+    slow (File: /usr/cadtool/ee5216/CBDK_TSMC90GUTM_Arm_f1.0/CIC/SynopsysDC/db/slow.db)
+
+Number of ports:                           40
+Number of nets:                           180
+Number of cells:                          158
+Number of combinational cells:             99
+Number of sequential cells:                48
+Number of macros/black boxes:               0
+Number of buf/inv:                         34
+Number of references:                      29
+
+Combinational area:                354.211210
+Buf/Inv area:                       98.078403
+Noncombinational area:             610.344007
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                   964.555217
+Total area:                 undefined
+1
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : pll
+Version: R-2020.09-SP5
+Date   : Thu Nov 27 16:32:55 2025
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: clk_shift_reg[1]
+              (rising edge-triggered flip-flop clocked by CLK_OUT)
+  Endpoint: clk_shift_reg[2]
+            (rising edge-triggered flip-flop clocked by CLK_OUT)
+  Path Group: CLK_OUT
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK_OUT (rise edge)                0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clk_shift_reg[1]/CK (DFFSQXL)            0.00       0.00 r
+  clk_shift_reg[1]/Q (DFFSQXL)             0.21       0.21 f
+  clk_shift_reg[2]/D (DFFSQXL)             0.00       0.21 f
+  data arrival time                                   0.21
+
+  clock CLK_OUT (rise edge)                0.50       0.50
+  clock network delay (ideal)              0.00       0.50
+  clk_shift_reg[2]/CK (DFFSQXL)            0.00       0.50 r
+  library setup time                      -0.11       0.39
+  data required time                                  0.39
+  -----------------------------------------------------------
+  data required time                                  0.39
+  data arrival time                                  -0.21
+  -----------------------------------------------------------
+  slack (MET)                                         0.18
+
+
+  Startpoint: state_reg[2]
+              (rising edge-triggered flip-flop clocked by CLK_REF)
+  Endpoint: x_reg[0] (rising edge-triggered flip-flop clocked by CLK_REF)
+  Path Group: CLK_REF
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK_REF (rise edge)                0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  state_reg[2]/CK (DFFRQX2)                0.00       0.00 r
+  state_reg[2]/Q (DFFRQX2)                 0.28       0.28 f
+  U81/Y (CLKINVX1)                         0.06       0.34 r
+  U70/Y (NAND3XL)                          0.22       0.57 f
+  U65/Y (AOI211X1)                         0.20       0.76 r
+  U61/Y (AOI221XL)                         0.13       0.89 f
+  U54/Y (OAI32XL)                          0.16       1.05 r
+  x_reg[0]/D (DFFRQX2)                     0.00       1.05 r
+  data arrival time                                   1.05
+
+  clock CLK_REF (rise edge)               10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  x_reg[0]/CK (DFFRQX2)                    0.00      10.00 r
+  library setup time                      -0.18       9.82
+  data required time                                  9.82
+  -----------------------------------------------------------
+  data required time                                  9.82
+  data arrival time                                  -1.05
+  -----------------------------------------------------------
+  slack (MET)                                         8.77
+
+
+1
+Loading db file '/usr/cadtool/ee5216/CBDK_TSMC90GUTM_Arm_f1.0/CIC/SynopsysDC/db/slow.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : pll
+Version: R-2020.09-SP5
+Date   : Thu Nov 27 16:32:55 2025
+****************************************
+
+
+Library(s) Used:
+
+    slow (File: /usr/cadtool/ee5216/CBDK_TSMC90GUTM_Arm_f1.0/CIC/SynopsysDC/db/slow.db)
+
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 0.9  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  = 181.3881 uW   (80%)
+  Net Switching Power  =  44.1792 uW   (20%)
+                         ---------
+Total Dynamic Power    = 225.5673 uW  (100%)
+
+Cell Leakage Power     =   2.7875 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           0.1296        6.1379e-04        1.0070e+06            0.1313  (  57.48%)
+sequential     6.2559e-04        1.2830e-05        6.0107e+04        6.9853e-04  (   0.31%)
+combinational  5.1131e-02        4.3553e-02        1.7204e+06        9.6403e-02  (  42.22%)
+--------------------------------------------------------------------------------------------------
+Total              0.1814 mW     4.4179e-02 mW     2.7875e+06 pW         0.2284 mW
+1
