@@ -1,0 +1,139 @@
+ 
+****************************************
+Report : area
+Design : sa
+Version: R-2020.09-SP5
+Date   : Sat Nov  1 17:36:48 2025
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    slow (File: /usr/cadtool/ee5216/CBDK_TSMC90GUTM_Arm_f1.0/CIC/SynopsysDC/db/slow.db)
+
+Number of ports:                           28
+Number of nets:                           136
+Number of cells:                          121
+Number of combinational cells:            111
+Number of sequential cells:                 8
+Number of macros/black boxes:               0
+Number of buf/inv:                         34
+Number of references:                      55
+
+Combinational area:                452.995210
+Buf/Inv area:                       72.676802
+Noncombinational area:             146.764803
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                   599.760013
+Total area:                 undefined
+1
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : sa
+Version: R-2020.09-SP5
+Date   : Sat Nov  1 17:36:48 2025
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: x_reg_0_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: x_reg_0_ (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  x_reg_0_/CK (DFFRHQX2)                   0.00       0.00 r
+  x_reg_0_/Q (DFFRHQX2)                    0.14       0.14 f
+  U119/Y (NAND2BX4)                        0.10       0.24 f
+  U99/Y (INVXL)                            0.04       0.28 r
+  U92/Y (NAND2BX2)                         0.05       0.33 f
+  U43/Y (XOR2X1)                           0.08       0.41 r
+  U97/Y (OAI2BB1X4)                        0.10       0.51 r
+  U80/Y (OR2X4)                            0.08       0.58 r
+  U79/Y (OAI2BB1X2)                        0.06       0.64 f
+  U56/Y (OAI2BB1XL)                        0.16       0.80 f
+  U53/Y (OR3X2)                            0.13       0.94 f
+  U54/Y (OR2X4)                            0.08       1.01 f
+  U84/Y (OAI2B11X4)                        0.04       1.05 r
+  U51/Y (NAND2BX2)                         0.05       1.10 f
+  U48/Y (INVX1)                            0.03       1.13 r
+  U148/Y (OAI32X1)                         0.06       1.20 f
+  x_reg_0_/D (DFFRHQX2)                    0.00       1.20 f
+  data arrival time                                   1.20
+
+  clock clk (rise edge)                    1.30       1.30
+  clock network delay (ideal)              0.00       1.30
+  x_reg_0_/CK (DFFRHQX2)                   0.00       1.30 r
+  library setup time                      -0.10       1.20
+  data required time                                  1.20
+  -----------------------------------------------------------
+  data required time                                  1.20
+  data arrival time                                  -1.20
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1
+Loading db file '/usr/cadtool/ee5216/CBDK_TSMC90GUTM_Arm_f1.0/CIC/SynopsysDC/db/slow.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : sa
+Version: R-2020.09-SP5
+Date   : Sat Nov  1 17:36:49 2025
+****************************************
+
+
+Library(s) Used:
+
+    slow (File: /usr/cadtool/ee5216/CBDK_TSMC90GUTM_Arm_f1.0/CIC/SynopsysDC/db/slow.db)
+
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 0.9  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  = 118.1890 uW   (88%)
+  Net Switching Power  =  16.7880 uW   (12%)
+                         ---------
+Total Dynamic Power    = 134.9771 uW  (100%)
+
+Cell Leakage Power     =   2.6952 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       9.8965e-02        4.2075e-03        4.7681e+05            0.1036  (  75.29%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  1.9224e-02        1.2581e-02        2.2184e+06        3.4023e-02  (  24.71%)
+--------------------------------------------------------------------------------------------------
+Total              0.1182 mW     1.6788e-02 mW     2.6952e+06 pW         0.1377 mW
+1
