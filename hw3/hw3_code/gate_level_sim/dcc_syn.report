@@ -1,0 +1,147 @@
+ 
+****************************************
+Report : area
+Design : dcc
+Version: R-2020.09-SP5
+Date   : Mon Dec 22 05:07:58 2025
+****************************************
+
+Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	U9/A1N U9/Y 
+Information: Timing loop detected. (OPT-150)
+	U7/A0 U7/Y U75/A U75/Y 
+Warning: Disabling timing arc between pins 'A1N' and 'Y' on cell 'U9'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A0' and 'Y' on cell 'U7'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'Y' on cell 'U6'
+         to break a timing loop. (OPT-314)
+Library(s) Used:
+
+    slow (File: /usr/cadtool/ee5216/CBDK_TSMC90GUTM_Arm_f1.0/CIC/SynopsysDC/db/slow.db)
+
+Number of ports:                           76
+Number of nets:                           249
+Number of cells:                          210
+Number of combinational cells:            133
+Number of sequential cells:                56
+Number of macros/black boxes:               0
+Number of buf/inv:                         57
+Number of references:                      47
+
+Combinational area:                497.448013
+Buf/Inv area:                      162.993604
+Noncombinational area:             643.507208
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                  1140.955220
+Total area:                 undefined
+1
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : dcc
+Version: R-2020.09-SP5
+Date   : Mon Dec 22 05:07:58 2025
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: state_reg[2]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: lambda_bar_reg[6]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  state_reg[2]/CK (DFFRHQX2)               0.00       0.00 r
+  state_reg[2]/Q (DFFRHQX2)                0.16       0.16 r
+  U103/Y (INVX2)                           0.04       0.20 f
+  U135/Y (NAND2X2)                         0.08       0.28 r
+  U131/Y (NOR2X4)                          0.07       0.34 f
+  U109/Y (NOR2X2)                          0.09       0.44 r
+  U130/Y (CLKNAND2X2)                      0.12       0.56 f
+  U134/Y (NOR2X2)                          0.10       0.66 r
+  U106/Y (CLKINVX2)                        0.06       0.72 f
+  U132/Y (NAND2X2)                         0.04       0.76 r
+  U144/Y (AOI21X1)                         0.04       0.81 f
+  U143/Y (OAI221X2)                        0.05       0.86 r
+  lambda_bar_reg[6]/D (DFFSQXL)            0.00       0.86 r
+  data arrival time                                   0.86
+
+  clock CLK (rise edge)                    1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  lambda_bar_reg[6]/CK (DFFSQXL)           0.00       1.00 r
+  library setup time                      -0.13       0.87
+  data required time                                  0.87
+  -----------------------------------------------------------
+  data required time                                  0.87
+  data arrival time                                  -0.86
+  -----------------------------------------------------------
+  slack (MET)                                         0.02
+
+
+1
+Loading db file '/usr/cadtool/ee5216/CBDK_TSMC90GUTM_Arm_f1.0/CIC/SynopsysDC/db/slow.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : dcc
+Version: R-2020.09-SP5
+Date   : Mon Dec 22 05:07:58 2025
+****************************************
+
+
+Library(s) Used:
+
+    slow (File: /usr/cadtool/ee5216/CBDK_TSMC90GUTM_Arm_f1.0/CIC/SynopsysDC/db/slow.db)
+
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 0.9  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  = 508.0244 uW   (80%)
+  Net Switching Power  = 125.2559 uW   (20%)
+                         ---------
+Total Dynamic Power    = 633.2804 uW  (100%)
+
+Cell Leakage Power     =   4.2409 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.1676        8.1342e-02        1.5517e+06            0.2505  (  39.29%)
+register           0.3136        1.4913e-02        1.0134e+06            0.3295  (  51.68%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  2.6843e-02        2.9001e-02        1.6758e+06        5.7520e-02  (   9.02%)
+--------------------------------------------------------------------------------------------------
+Total              0.5080 mW         0.1253 mW     4.2409e+06 pW         0.6375 mW
+1
