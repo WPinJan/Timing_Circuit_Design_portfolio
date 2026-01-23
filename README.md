@@ -1,16 +1,16 @@
 # Timing Circuit Design portfolio
 
-This repository contains all the homeworks I completed during my **Timing Circuit Design and Application** course in 2025. The topics include combinational circuit design, sequential circuit design, finite state machine (FSM), synthesis, and APR.
+This repository contains all the homeworks I completed during my **Timing Circuit Design and Application** course in 2025. The topics include Tunable Delay Line (TDL), Delay Locked Loop (DLL), Phase Locked Loop (PLL), Time-to-Digital Converter (TDC), Digital-to-Time Converter (DTC), Duty Cycle Corrector (DCC) and some introduction of delay monitoring and built-in self-repair for interconnects in 3D ICs.
 
-We used **Verilog** throughout the course. The main tools employed were **Synopsys VCS** for simulation, **Synopsys DC** for synthesis, **Cadence Innovus** for APR, and **nWave** from **Verdi** for waveform debugging. 
+We get familiar with cell based design flow in the homeworks. We used **Verilog** throughout the course. The main tools employed were **Synopsys VCS** for simulation, **Synopsys DC** for synthesis, **Cadence Innovus** for APR, and **nWave** from **Verdi** for waveform debugging and verification. 
 
-## 🔸 Lab List
+## 🔸 Homework List
 
-- **Lab1** – Design and verification of the message schedule module in a hash algorithm
-- **Lab2** – Design and verification of the complete hash algorithm
-- **Lab3** – FPGA prototyping of the hash algorithm
+- **HW1** – Design of the successive approximation algorithm
+- **HW2** – Design of a low resolution Phase Locked Loop (PLL)
+- **HW3** – Design of a low resolution Duty Cycle Corrector (DCC)
 
-In the reports of the labs, there are block diagram, module structure, FSM flow char and waveform by wavedrom. Also note that all design RTL code and testbench including testcase are designed by myself.
+In the reports of the homeworks, there are block diagram, module structure and FSM flow chart. Homeworks include rtl simulation, gate level simulation and post-layout simulation.
 
 ---
 
